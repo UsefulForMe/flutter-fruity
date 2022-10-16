@@ -9,14 +9,14 @@ class RestClient {
   final JsonDecoder _decoder = const JsonDecoder();
   final JsonEncoder _encoder = const JsonEncoder();
   // Get:-----------------------------------------------------------------------
-  Future<Map<String, dynamic>> get(String path) {
+  Future<http.Response> get(String path, {Map<String, String>? headers}) async {
     return http
         .get(
           Uri.parse(
             '${Endpoints.baseUrl}$path',
           ),
-        )
-        .then(_createResponse);
+          headers: headers,
+        );
   }
 
   // Post:----------------------------------------------------------------------
