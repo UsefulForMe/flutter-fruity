@@ -11,7 +11,12 @@ import 'package:fruity/stores/search/search.dart';
 import 'package:fruity/stores/search_history/search_history_store.dart';
 import 'package:fruity/stores/user/auth_store.dart';
 import 'package:fruity/stores/version/version_store.dart';
+import 'package:fruity/ui/auth/login.dart';
+import 'package:fruity/ui/course-report/course-report.dart';
+import 'package:fruity/ui/course/course.dart';
+import 'package:fruity/ui/home/home.dart';
 import 'package:fruity/ui/splash/splash.dart';
+import 'package:fruity/ui/subject/subject.dart';
 import 'package:fruity/utils/fcm.dart';
 import 'package:provider/provider.dart';
 
@@ -61,7 +66,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         routes: Routes.routes,
         title: Strings.appName,
-        home: const SplashScreen(),
+        home: CourseReportScreen(),
         builder: (BuildContext context, Widget? child) {
           final MediaQueryData mediaQueryData = MediaQuery.of(context);
           final double scale = mediaQueryData.textScaleFactor.clamp(1.0, 1.3);
